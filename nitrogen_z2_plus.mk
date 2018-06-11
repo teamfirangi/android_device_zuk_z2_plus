@@ -21,7 +21,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 $(call inherit-product, device/zuk/z2_plus/device.mk)
 
 # Boot animation resolution
-# TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_SCREEN_WIDTH := 1080
 
 # Inherit some common AOSP-OMS stuff.
 $(call inherit-product, vendor/nitrogen/products/common.mk)
@@ -40,3 +40,9 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
 BUILD_FINGERPRINT := "ZUK/z2_plus/z2_plus:7.0/NRD90M/3.1.117_171110:user/release-keys"
+
+#Gapps
+$(call inherit-product, vendor/gapps/config.mk)
+TARGET_ARCH := arm64
+TARGET_DENSITY := xxhdpi
+IS_PHONE := true
