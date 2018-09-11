@@ -46,3 +46,11 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
 BUILD_FINGERPRINT := "ZUK/z2_plus/z2_plus:7.0/NRD90M/3.1.117_171110:user/release-keys"
+
+#Gapps
+$(call inherit-product, vendor/gapps/config.mk)
+TARGET_GAPPS_ARCH := arm64
+IS_PHONE := true
+
+#Pixel
+$(call inherit-product, vendor/pixelstyle/config.mk)
